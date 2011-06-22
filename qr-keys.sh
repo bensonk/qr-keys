@@ -7,12 +7,15 @@ cat $PUB | qrencode -o $PUB".png"
 convert -negate -colorize 55,0,0 -negate $PRIV.png $PRIV.png
 convert -negate -colorize 0,0,55 -negate $PUB.png $PUB.png
 
+PRIV_IMG=`basename "$PRIV.png"`
+PUB_IMG=`basename "$PUB.png"`
+
 cat >$PRIV.html <<END
 <html>
-  <head><title>$PRIV | $PUB</title></head>
+  <head><title>$PRIV_IMG | $PUB_IMG</title></head>
   <body>
-   <div id="public"><img src="$PUB.png"></div>
-   <div id="private"><img src="$PRIV.png"></div>
+   <div id="public"><img src="$PUB_IMG"></div>
+   <div id="private"><img src="$PRIV_IMG"></div>
   </body>
 </html>
 END
