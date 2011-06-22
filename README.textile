@@ -1,0 +1,15 @@
+h1. QR Keys
+
+A project to explore the use of QR codes to store ssh keys. 
+
+h3. qr-keys.sh
+
+bc. ./qr-keys.sh ~/.ssh/id_dsa.pub
+
+Depends on "libqrencode":http://fukuchi.org/works/qrencode/index.en.html and
+"ImageMagick":http://www.imagemagick.org/ CLI tools.
+
+This tool will take an ssh keypair (e.g. id_dsa and id_dsa.pub) and generate
+two QR Codes and an HTML document that embeds them.  It will make a naive
+attempt to open the html document for easy printing; this currently only works
+on OSX.  
